@@ -1,0 +1,300 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+String intreb[101];
+String raspuns[11];
+int nota=0, i=1,k=1,n=0,times=10;
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+
+{
+
+        Label10->Caption = times;
+  raspuns[1]="2";
+  intreb[1]="Care este capitala Republicii Moldova?";
+  intreb[2]="Kiev";
+  intreb[3]="Chisinau";
+  intreb[4]="Moscova";
+  intreb[5]="LosAngeles";
+
+  raspuns[2]="2";
+  intreb[6]="Care e rezultatul expresiei matematice 4+5*3 ?";
+  intreb[7]="27";
+  intreb[8]="19";
+  intreb[9]="12";
+  intreb[10]="multime vida";
+
+  raspuns[3]="4";
+  intreb[11]="Care este limba de stat in Republica Moldova?";
+  intreb[12]="Rusa";
+  intreb[13]="Ucraineana";
+  intreb[14]="Engleza";
+  intreb[15]="Romana";
+
+  raspuns[4]="1";
+  intreb[16]="Care este Legea fundamentala a dinamicii?";
+  intreb[17]="F=m*a";
+  intreb[18]="m=F*a";
+  intreb[19]="a=F-m";
+  intreb[20]="m=a+F";
+
+  raspuns[5]="2";
+  intreb[21]="Doi reprezinta intodeuna 1+1 ?";
+  intreb[22]="da";
+  intreb[23]="nu";
+  intreb[24]="nu stiu";
+  intreb[25]="posibil";
+
+  raspuns[6]="2";
+  intreb[26]="Un corp solid care nu are nici un unghi este o sfera?";
+  intreb[27]="nu";
+  intreb[28]="da";
+  intreb[29]="nu stiu";
+  intreb[30]="doar vara";
+
+  raspuns[7]="2";
+  intreb[31]="Cit face jumatate din doi plus doi?";
+  intreb[32]="2";
+  intreb[33]="3";
+  intreb[34]="nu stiu";
+  intreb[35]="1/2";
+
+  raspuns[8]="4";
+  intreb[36]="Ce valoare are constanta Pi ?";
+  intreb[37]="314";
+  intreb[38]="31.4";
+  intreb[39]="3.41";
+  intreb[40]="3.14";
+
+  raspuns[9]="3";
+  intreb[41]="Dupa 15 minute de condus cu viteza constanta, un sofer observa ca a parcurs 15 km. Cu ce viteza a condus acesta?";
+  intreb[42]="15";
+  intreb[43]="30";
+  intreb[44]="60";
+  intreb[45]="75";
+
+  raspuns[10]="3";
+  intreb[46]="Care e rezultatul expresiei matematice 2+2*8 ?";
+  intreb[47]="16";
+  intreb[48]="32";
+  intreb[49]="18";
+  intreb[50]="multime vida";
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+Form1->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+
+
+if (((Edit1->Text).Length() == 0) || ((Edit2->Text).Length() == 0) )
+        {
+        MessageDlg("Introduceti Numele si prenumele Dumneavoastra!",mtInformation,TMsgDlgButtons() << mbOK,0);
+                if((Edit1->Text).Length() == 0 ) Edit1->SetFocus(); // cursorul in cimpul nume
+                        else Edit2->SetFocus(); //cursorul in cimpul prenume
+        } else
+                {    Timer1->Enabled = true;
+                     Timer2->Enabled = true;
+                Label7->Caption = Edit1->Text;
+                Label7->Visible = true;
+                 Label8->Caption = Edit2->Text;
+                 Label8->Visible = true;
+                 Label6->Visible = true;
+                 Panel1->Visible = true;
+                   while(i<100){
+                 Label9->Caption = intreb[i]; i++;
+                 RadioButton1->Caption = intreb[i];i++;
+                 RadioButton2->Caption = intreb[i];i++;
+                 RadioButton3->Caption = intreb[i];i++;
+                 RadioButton4->Caption = intreb[i];i++;
+                 break;
+                   }
+                   
+                 n++;
+                 }
+
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+     times=10;
+ if (n==10){
+       while (k<=10){
+if (RadioButton1->Checked == true && raspuns[k] == "1") nota++;
+
+
+if (RadioButton2->Checked == true && raspuns[k] == "2") nota++;
+
+
+if (RadioButton3->Checked == true && raspuns[k] == "3") nota++;
+
+
+if (RadioButton4->Checked == true && raspuns[k] == "4") nota++;
+
+
+                                         k++; break;  } //while 1
+
+
+                  Panel1->Visible = false;
+                  Edit1->Visible = false;
+                  Edit2->Visible = false;
+                  Label12 ->Visible = true;
+                  Label13->Caption = nota;
+                  Label1 ->Visible = false;
+                  Label2 ->Visible = false;
+                  Label13 ->Visible = true;
+                  Button1->Visible = false; 
+
+
+
+
+
+            }// end if 1
+        else{
+
+      while (k<=10){
+if (RadioButton1->Checked == true && raspuns[k] == "1") nota++;
+
+
+if (RadioButton2->Checked == true && raspuns[k] == "2") nota++;
+
+
+if (RadioButton3->Checked == true && raspuns[k] == "3") nota++;
+
+
+if (RadioButton4->Checked == true && raspuns[k] == "4") nota++;
+
+
+                                         k++; break;  } //while 1
+                   while(i<100){
+                 Label9->Caption = intreb[i]; i++;
+
+                 RadioButton1->Checked = false;
+                 RadioButton2->Checked = false;
+                 RadioButton3->Checked = false;
+                 RadioButton4->Checked = false;
+
+                 RadioButton1->Caption = intreb[i];i++;
+                 RadioButton2->Caption = intreb[i];i++;
+                 RadioButton3->Caption = intreb[i];i++;
+                 RadioButton4->Caption = intreb[i];i++;
+                 break;
+                 } n++; //while 2
+        }      // else
+
+}// function end
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+Label10->Caption =Time().FormatString("hh:mm:ss");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Timer2Timer(TObject *Sender)
+{
+if (times == 0){
+
+
+
+ if (n==10){
+       while (k<=10){
+if (RadioButton1->Checked == true && raspuns[k] == "1") nota++;
+
+
+if (RadioButton2->Checked == true && raspuns[k] == "2") nota++;
+
+
+if (RadioButton3->Checked == true && raspuns[k] == "3") nota++;
+
+
+if (RadioButton4->Checked == true && raspuns[k] == "4") nota++;
+
+
+                                         k++; break;  } //while 1
+
+
+                  Panel1->Visible = false;
+                  Edit1->Visible = false;
+                  Edit2->Visible = false;
+                  Label12 ->Visible = true;
+                  Label13->Caption = nota;
+                  Label1 ->Visible = false;
+                  Label2 ->Visible = false;
+                  Label13 ->Visible = true;
+                  Button1->Visible = false; 
+
+
+
+
+
+            }// end if 1
+        else{
+
+      while (k<=10){
+if (RadioButton1->Checked == true && raspuns[k] == "1") nota++;
+
+
+if (RadioButton2->Checked == true && raspuns[k] == "2") nota++;
+
+
+if (RadioButton3->Checked == true && raspuns[k] == "3") nota++;
+
+
+if (RadioButton4->Checked == true && raspuns[k] == "4") nota++;
+
+
+                                         k++; break;  } //while 1
+                   while(i<100){
+                 Label9->Caption = intreb[i]; i++;
+
+                 RadioButton1->Checked = false;
+                 RadioButton2->Checked = false;
+                 RadioButton3->Checked = false;
+                 RadioButton4->Checked = false;
+
+                 RadioButton1->Caption = intreb[i];i++;
+                 RadioButton2->Caption = intreb[i];i++;
+                 RadioButton3->Caption = intreb[i];i++;
+                 RadioButton4->Caption = intreb[i];i++;
+                 break;
+                 } n++; //while 2
+        }      // else
+
+
+
+
+ times=10;
+}else{
+times--;
+}
+Label11->Caption = times;
+}
+//---------------------------------------------------------------------------
+
