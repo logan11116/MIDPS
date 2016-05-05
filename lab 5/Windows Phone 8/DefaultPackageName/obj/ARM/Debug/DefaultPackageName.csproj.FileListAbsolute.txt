@@ -1,0 +1,6 @@
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\DefaultPackageName.csprojResolveAssemblyReference.cache
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\App.g.cs
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\MainPage.g.cs
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\DefaultPackageName.g.resources
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\DefaultPackageName.Resources.AppResources.resources
+C:\Users\Roman\Downloads\Space-Sonic-master\Space-Sonic-master\Windows Phone 8\DefaultPackageName\obj\ARM\Debug\DefaultPackageName.csproj.GenerateResource.Cache
